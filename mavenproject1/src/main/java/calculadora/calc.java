@@ -65,6 +65,8 @@ public class calc extends javax.swing.JFrame {
 
         bC.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         bC.setText("C");
+        bC.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bCActionPerformed(evt);
@@ -73,6 +75,8 @@ public class calc extends javax.swing.JFrame {
 
         bd.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         bd.setText("/");
+        bd.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bdActionPerformed(evt);
@@ -81,6 +85,8 @@ public class calc extends javax.swing.JFrame {
 
         bm.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         bm.setText("X");
+        bm.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bm.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bmActionPerformed(evt);
@@ -89,6 +95,8 @@ public class calc extends javax.swing.JFrame {
 
         br.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         br.setText("-");
+        br.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        br.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         br.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brActionPerformed(evt);
@@ -97,6 +105,8 @@ public class calc extends javax.swing.JFrame {
 
         b7.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b7.setText("7");
+        b7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b7ActionPerformed(evt);
@@ -105,6 +115,8 @@ public class calc extends javax.swing.JFrame {
 
         b8.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b8.setText("8");
+        b8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b8ActionPerformed(evt);
@@ -113,6 +125,8 @@ public class calc extends javax.swing.JFrame {
 
         b9.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b9.setText("9");
+        b9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b9ActionPerformed(evt);
@@ -121,6 +135,8 @@ public class calc extends javax.swing.JFrame {
 
         bs.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         bs.setText("+");
+        bs.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bs.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bsActionPerformed(evt);
@@ -129,6 +145,8 @@ public class calc extends javax.swing.JFrame {
 
         b4.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b4.setText("4");
+        b4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b4ActionPerformed(evt);
@@ -137,6 +155,8 @@ public class calc extends javax.swing.JFrame {
 
         b5.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b5.setText("5");
+        b5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b5ActionPerformed(evt);
@@ -145,6 +165,8 @@ public class calc extends javax.swing.JFrame {
 
         b6.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b6.setText("6");
+        b6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b6ActionPerformed(evt);
@@ -153,6 +175,8 @@ public class calc extends javax.swing.JFrame {
 
         b1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b1.setText("1");
+        b1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b1ActionPerformed(evt);
@@ -161,6 +185,8 @@ public class calc extends javax.swing.JFrame {
 
         b2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b2.setText("2");
+        b2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b2ActionPerformed(evt);
@@ -169,6 +195,8 @@ public class calc extends javax.swing.JFrame {
 
         b3.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b3.setText("3");
+        b3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b3ActionPerformed(evt);
@@ -177,6 +205,8 @@ public class calc extends javax.swing.JFrame {
 
         b0.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b0.setText("0");
+        b0.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b0ActionPerformed(evt);
@@ -185,6 +215,8 @@ public class calc extends javax.swing.JFrame {
 
         be.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         be.setText("=");
+        be.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        be.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         be.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 beActionPerformed(evt);
@@ -193,6 +225,8 @@ public class calc extends javax.swing.JFrame {
 
         bp.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         bp.setText(".");
+        bp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         calc.setBackground(new java.awt.Color(0, 0, 0));
         calc.setForeground(new java.awt.Color(255, 255, 255));
@@ -320,21 +354,21 @@ public class calc extends javax.swing.JFrame {
         if (n1 == 0) {
             n1 = 0;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n1 > 0 && op.isEmpty()) {
             n1 = n1 * 10;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n2 == 0) {
             n2 = 0;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         } else if (n2 > 0 && !op.isEmpty()) {
             n2 = n2 * 10;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         }
     }//GEN-LAST:event_b0ActionPerformed
 
@@ -347,7 +381,7 @@ public class calc extends javax.swing.JFrame {
             n2 = 0;
             op = "";
             calc.setText("");
-            txt.setText(String.valueOf(res));
+            txt.setText(String.valueOf((long)res));
         }
     }//GEN-LAST:event_beActionPerformed
 
@@ -355,21 +389,21 @@ public class calc extends javax.swing.JFrame {
         if (n1 == 0) {
             n1 = 1;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n1 > 0 && op.isEmpty()) {
             n1 = n1 * 10+1;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n2 == 0) {
             n2 = 1;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         } else if (n2 > 0 && !op.isEmpty()) {
             n2 = (n2 * 10)+1;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         }
     }//GEN-LAST:event_b1ActionPerformed
 
@@ -377,21 +411,21 @@ public class calc extends javax.swing.JFrame {
         if (n1 == 0) {
             n1 = 2;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n1 > 0 && op.isEmpty()) {
             n1 = n1 * 10+2;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n2 == 0) {
             n2 = 2;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         } else if (n2 > 0 && !op.isEmpty()) {
             n2 = n2 * 10+2;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         }
     }//GEN-LAST:event_b2ActionPerformed
 
@@ -399,21 +433,21 @@ public class calc extends javax.swing.JFrame {
         if (n1 == 0) {
             n1 = 3;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n1 > 0 && op.isEmpty()) {
             n1 = n1 * 10+3;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n2 == 0) {
             n2 = 3;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         } else if (n2 > 0 && !op.isEmpty()) {
             n2 = n2 * 10+3;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         }
     }//GEN-LAST:event_b3ActionPerformed
 
@@ -421,21 +455,21 @@ public class calc extends javax.swing.JFrame {
         if (n1 == 0) {
             n1 = 4;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n1 > 0 && op.isEmpty()) {
             n1 = n1 * 10 + 4;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n2 == 0) {
             n2 = 4;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         } else if (n2 > 0 && !op.isEmpty()) {
             n2 = n2 * 10 + 4;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         }
     }//GEN-LAST:event_b4ActionPerformed
 
@@ -443,21 +477,21 @@ public class calc extends javax.swing.JFrame {
         if (n1 == 0) {
             n1 = 5;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n1 > 0 && op.isEmpty()) {
             n1 = n1*10+5;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n2 == 0) {
             n2 = 5;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         } else if (n2 > 0 && !op.isEmpty()) {
             n2 = n2 * 10+5;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         }
     }//GEN-LAST:event_b5ActionPerformed
 
@@ -465,21 +499,21 @@ public class calc extends javax.swing.JFrame {
         if (n1 == 0) {
             n1 = 6;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n1 > 0 && op.isEmpty()) {
             n1 = n1 * 10+6;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n2 == 0) {
             n2 = 6;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         } else if (n2 > 0 && !op.isEmpty()) {
             n2 = n2 * 10+6;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         }
     }//GEN-LAST:event_b6ActionPerformed
 
@@ -487,21 +521,21 @@ public class calc extends javax.swing.JFrame {
         if (n1 == 0) {
             n1 = 7;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n1 > 0 && op.isEmpty()) {
             n1 = n1 * 10+7;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n2 == 0) {
             n2 = 7;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         } else if (n2 > 0 && !op.isEmpty()) {
             n2 = n2 * 10+7;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         }
     }//GEN-LAST:event_b7ActionPerformed
 
@@ -509,21 +543,21 @@ public class calc extends javax.swing.JFrame {
         if (n1 == 0) {
             n1 = 8;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n1 > 0 && op.isEmpty()) {
             n1 = n1 * 10+8;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n2 == 0) {
             n2 = 8;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         } else if (n2 > 0 && !op.isEmpty()) {
             n2 = n2 * 10+8;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         }
     }//GEN-LAST:event_b8ActionPerformed
 
@@ -531,21 +565,21 @@ public class calc extends javax.swing.JFrame {
         if (n1 == 0) {
             n1 = 9;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n1 > 0 && op.isEmpty()) {
             n1 = n1 * 10+9;
             calc.setN1(n1);
-            txt.setText(String.valueOf(n1));
+            txt.setText(String.valueOf((long)n1));
         } else if (n2 == 0) {
             n2 = 9;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         } else if (n2 > 0 && !op.isEmpty()) {
             n2 = n2 * 10+9;
             calc.setN2(n2);
-            calc.setText(String.valueOf(n1) + op);
-            txt.setText(String.valueOf(n2));
+            calc.setText(String.valueOf((long)n1) + op);
+            txt.setText(String.valueOf((long)n2));
         }
     }//GEN-LAST:event_b9ActionPerformed
 
