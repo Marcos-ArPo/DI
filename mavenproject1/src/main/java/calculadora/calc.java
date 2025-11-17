@@ -14,12 +14,14 @@ public class calc extends javax.swing.JFrame {
     private String op = "";
     private double n1;
     private double n2;
+    private static boolean estado = false;
 
     /**
      * Creates new form calc
      */
     public calc() {
         initComponents();
+        onOff();
     }
 
     /**
@@ -51,6 +53,7 @@ public class calc extends javax.swing.JFrame {
         be = new javax.swing.JButton();
         bp = new javax.swing.JButton();
         calc = new Calculadora.Calculadora();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -234,6 +237,16 @@ public class calc extends javax.swing.JFrame {
         calc.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
         calc.setOpaque(true);
 
+        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jButton1.setText("On / Off");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -281,15 +294,20 @@ public class calc extends javax.swing.JFrame {
                                     .addComponent(bp, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addComponent(be, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(calc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 11, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(calc, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(calc, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(calc, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -603,6 +621,53 @@ public class calc extends javax.swing.JFrame {
         calc.setOp(op);
     }//GEN-LAST:event_bsActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        onOff();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private static void onOff() {
+        if (estado) {
+            b0.setEnabled(false);
+            b1.setEnabled(false);
+            b2.setEnabled(false);
+            b3.setEnabled(false);
+            b4.setEnabled(false);
+            b5.setEnabled(false);
+            b6.setEnabled(false);
+            b7.setEnabled(false);
+            b8.setEnabled(false);
+            b9.setEnabled(false);
+            bC.setEnabled(false);
+            bd.setEnabled(false);
+            be.setEnabled(false);
+            bm.setEnabled(false);
+            bp.setEnabled(false);
+            br.setEnabled(false);
+            bs.setEnabled(false);
+            estado = false;
+            calc.setText("");
+            txt.setText("");
+        } else {
+            b0.setEnabled(true);
+            b1.setEnabled(true);
+            b2.setEnabled(true);
+            b3.setEnabled(true);
+            b4.setEnabled(true);
+            b5.setEnabled(true);
+            b6.setEnabled(true);
+            b7.setEnabled(true);
+            b8.setEnabled(true);
+            b9.setEnabled(true);
+            bC.setEnabled(true);
+            bd.setEnabled(true);
+            be.setEnabled(true);
+            bm.setEnabled(true);
+            bp.setEnabled(true);
+            br.setEnabled(true);
+            bs.setEnabled(true);
+            estado = true;
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -629,25 +694,26 @@ public class calc extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton b0;
-    private javax.swing.JButton b1;
-    private javax.swing.JButton b2;
-    private javax.swing.JButton b3;
-    private javax.swing.JButton b4;
-    private javax.swing.JButton b5;
-    private javax.swing.JButton b6;
-    private javax.swing.JButton b7;
-    private javax.swing.JButton b8;
-    private javax.swing.JButton b9;
-    private javax.swing.JButton bC;
-    private javax.swing.JButton bd;
-    private javax.swing.JButton be;
-    private javax.swing.JButton bm;
-    private javax.swing.JButton bp;
-    private javax.swing.JButton br;
-    private javax.swing.JButton bs;
-    private Calculadora.Calculadora calc;
+    private static javax.swing.JButton b0;
+    private static javax.swing.JButton b1;
+    private static javax.swing.JButton b2;
+    private static javax.swing.JButton b3;
+    private static javax.swing.JButton b4;
+    private static javax.swing.JButton b5;
+    private static javax.swing.JButton b6;
+    private static javax.swing.JButton b7;
+    private static javax.swing.JButton b8;
+    private static javax.swing.JButton b9;
+    private static javax.swing.JButton bC;
+    private static javax.swing.JButton bd;
+    private static javax.swing.JButton be;
+    private static javax.swing.JButton bm;
+    private static javax.swing.JButton bp;
+    private static javax.swing.JButton br;
+    private static javax.swing.JButton bs;
+    private static Calculadora.Calculadora calc;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel txt;
+    private static javax.swing.JLabel txt;
     // End of variables declaration//GEN-END:variables
 }
