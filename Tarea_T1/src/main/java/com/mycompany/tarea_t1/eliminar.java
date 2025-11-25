@@ -5,13 +5,15 @@
 package com.mycompany.tarea_t1;
 
 import javax.swing.JOptionPane;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
  *
  * @author alumnadotarde
  */
 public class eliminar extends javax.swing.JDialog {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(eliminar.class.getName());
     private logica log;
 
@@ -21,6 +23,8 @@ public class eliminar extends javax.swing.JDialog {
     public eliminar(java.awt.Frame parent, boolean modal, logica l) {
         super(parent, modal);
         initComponents();
+        setupKeyBindings();
+        setupAccesibilidad();
         this.log = l;
         tabla.setModel(new table(log.mostrar()));
     }
@@ -35,20 +39,21 @@ public class eliminar extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        elim = new javax.swing.JButton();
+        bot = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
         exit = new javax.swing.JButton();
+        ayuda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(241, 187, 242));
 
-        elim.setText("Eliminar");
-        elim.addActionListener(new java.awt.event.ActionListener() {
+        bot.setText("Eliminar (Enter)");
+        bot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                elimActionPerformed(evt);
+                botActionPerformed(evt);
             }
         });
 
@@ -76,10 +81,17 @@ public class eliminar extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tabla);
 
-        exit.setText("Salir");
+        exit.setText("Salir (Esc)");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
+            }
+        });
+
+        ayuda.setText("Ayuda (Ctrl+H)");
+        ayuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ayudaActionPerformed(evt);
             }
         });
 
@@ -90,7 +102,9 @@ public class eliminar extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(ayuda)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(exit))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,22 +114,24 @@ public class eliminar extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(90, 90, 90)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(elim)
+                                    .addComponent(bot)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 65, Short.MAX_VALUE)))
+                        .addGap(0, 77, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
+                .addContainerGap(44, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(elim)
+                .addComponent(bot)
                 .addGap(36, 36, 36)
-                .addComponent(exit)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exit)
+                    .addComponent(ayuda))
                 .addContainerGap())
         );
 
@@ -123,26 +139,72 @@ public class eliminar extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void setupKeyBindings() {
+        jPanel1.setFocusable(true);
+        jPanel1.requestFocusInWindow();
+
+        InputMap inputMap = jPanel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        ActionMap actionMap = jPanel1.getActionMap();
+
+        // Ctrl+H para ayuda en cualquier ventana
+        KeyStroke ctrlH = KeyStroke.getKeyStroke(KeyEvent.VK_H, InputEvent.CTRL_DOWN_MASK);
+        inputMap.put(ctrlH, "ayuda");
+        actionMap.put("ayuda", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ayuda.doClick();
+            }
+        });
+
+        // Enter para confirmar
+        KeyStroke enter = KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0);
+        inputMap.put(enter, "confirmar");
+        actionMap.put("confirmar", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                bot.doClick(); // o el botón correspondiente
+            }
+        });
+
+        // ESC para cancelar
+        KeyStroke esc = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0);
+        inputMap.put(esc, "cancelar");
+        actionMap.put("cancelar", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                exit.doClick();
+            }
+        });
+    }
+
+    private void setupAccesibilidad() {
+        // Asociar label con la tabla
+        jLabel1.setLabelFor(tabla);
+
+        // Descripciones accesibles
+        jLabel1.getAccessibleContext().setAccessibleDescription("Tabla de coches disponibles para eliminar");
+        tabla.getAccessibleContext().setAccessibleName("Lista de coches");
+        tabla.getAccessibleContext().setAccessibleDescription("Tabla que muestra los coches disponibles. Use las flechas para navegar y Enter para seleccionar");
+
+        bot.getAccessibleContext().setAccessibleDescription("Eliminar el coche seleccionado de la lista");
+        exit.getAccessibleContext().setAccessibleDescription("Cerrar la ventana de eliminación");
+    }
+
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_exitActionPerformed
 
-    private void elimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimActionPerformed
+    private void botActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botActionPerformed
         int sel = tabla.convertRowIndexToModel(tabla.getSelectedRow());
         if (sel == -1) {
             JOptionPane.showMessageDialog(this, "Elige un coche", "Error", JOptionPane.ERROR_MESSAGE);
@@ -154,7 +216,23 @@ public class eliminar extends javax.swing.JDialog {
             }
         }
         this.setVisible(false);
-    }//GEN-LAST:event_elimActionPerformed
+    }//GEN-LAST:event_botActionPerformed
+
+    private void ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaActionPerformed
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("================== AYUDA ======================\n\n");
+        sb.append("USO DE LA PAGINA\n");
+        sb.append("- Primero elige un coche de la lista\n");
+        sb.append("- Luego dale al boton que dice 'Eliminar' o presiona Enter\n");
+        sb.append("- El coche se eliminara del garaje\n\n");
+        sb.append("BOTONES\n");
+        sb.append("- Eliminar - Sirve para eliminar el coche seleccionado\n");
+        sb.append("- Salir - Salir de la aplicacion\n");
+        sb.append("- Ayuda - Muestra esta ventana de ayuda");
+
+        JOptionPane.showMessageDialog(this, sb.toString(), "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_ayudaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,7 +272,8 @@ public class eliminar extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton elim;
+    private javax.swing.JButton ayuda;
+    private javax.swing.JButton bot;
     private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

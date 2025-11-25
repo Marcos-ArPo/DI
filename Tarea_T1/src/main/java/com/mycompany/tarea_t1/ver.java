@@ -6,26 +6,29 @@ package com.mycompany.tarea_t1;
 
 import java.awt.Image;
 import java.io.File;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
  *
  * @author alumnadotarde
  */
 public class ver extends javax.swing.JDialog {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ver.class.getName());
     private logica log;
 
     /**
      * Creates new form ver
+     *
      * @param parent
      * @param modal
      */
     public ver(java.awt.Frame parent, boolean modal, logica l) {
         super(parent, modal);
         initComponents();
+        setupKeyBindings();
+        setupAccesibilidad();
         this.log = l;
         tabla.setModel(new table(log.mostrar()));
     }
@@ -43,9 +46,10 @@ public class ver extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        bot = new javax.swing.JButton();
         imag = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
+        ayuda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -75,17 +79,24 @@ public class ver extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tabla);
 
-        jButton1.setText("Ver imagen");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bot.setText("Ver imagen (Enter)");
+        bot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botActionPerformed(evt);
             }
         });
 
-        exit.setText("Salir");
+        exit.setText("Salir (Esc)");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
+            }
+        });
+
+        ayuda.setText("Ayuda (Ctrl+H)");
+        ayuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ayudaActionPerformed(evt);
             }
         });
 
@@ -96,7 +107,9 @@ public class ver extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(ayuda)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(exit))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(245, 245, 245)
@@ -107,11 +120,11 @@ public class ver extends javax.swing.JDialog {
                 .addGap(72, 72, 72)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(bot)
                         .addGap(30, 30, 30)
                         .addComponent(imag, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,60 +136,127 @@ public class ver extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE))
+                        .addComponent(bot)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(imag, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
-                .addComponent(exit)
-                .addGap(11, 11, 11))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ayuda)
+                    .addComponent(exit))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void setupKeyBindings() {
+        jPanel1.setFocusable(true);
+        jPanel1.requestFocusInWindow();
+
+        InputMap inputMap = jPanel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        ActionMap actionMap = jPanel1.getActionMap();
+
+        // Ctrl+H para ayuda en cualquier ventana
+        KeyStroke ctrlH = KeyStroke.getKeyStroke(KeyEvent.VK_H, InputEvent.CTRL_DOWN_MASK);
+        inputMap.put(ctrlH, "ayuda");
+        actionMap.put("ayuda", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ayuda.doClick();
+            }
+        });
+
+        // Enter para confirmar
+        KeyStroke enter = KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0);
+        inputMap.put(enter, "confirmar");
+        actionMap.put("confirmar", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                bot.doClick(); // o el botón correspondiente
+            }
+        });
+
+        // ESC para cancelar
+        KeyStroke esc = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0);
+        inputMap.put(esc, "cancelar");
+        actionMap.put("cancelar", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                exit.doClick();
+            }
+        });
+    }
+
+    private void setupAccesibilidad() {
+        // Asociar label con la tabla
+        jLabel1.setLabelFor(tabla);
+
+        // Descripciones accesibles
+        jLabel1.getAccessibleContext().setAccessibleDescription("Tabla de coches disponibles para visualizar");
+        tabla.getAccessibleContext().setAccessibleName("Lista de coches");
+        tabla.getAccessibleContext().setAccessibleDescription("Tabla que muestra los coches disponibles. Seleccione un coche y pulse el botón para ver su imagen");
+
+        bot.getAccessibleContext().setAccessibleDescription("Mostrar la imagen del coche seleccionado");
+        imag.getAccessibleContext().setAccessibleName("Área de visualización de imágenes");
+        imag.getAccessibleContext().setAccessibleDescription("Aquí se mostrará la imagen del coche seleccionado");
+
+        exit.getAccessibleContext().setAccessibleDescription("Cerrar la ventana de visualización");
+    }
+
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_exitActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botActionPerformed
         int sel = tabla.convertRowIndexToModel(tabla.getSelectedRow());
         if (sel == -1) {
             JOptionPane.showMessageDialog(this, "Elige un coche", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            String ruta = "./imags/"+sel+".jpeg";
-            
+            String ruta = "./imags/" + sel + ".jpeg";
+
             File f = new File(ruta);
-            
+
             if (f.exists()) {
                 ImageIcon ico = new ImageIcon(ruta);
-                
+
                 Image img = ico.getImage().getScaledInstance(imag.getWidth(), imag.getHeight(), Image.SCALE_SMOOTH);
-                
+
                 imag.setIcon(new ImageIcon(img));
             } else {
                 JOptionPane.showMessageDialog(this, "Imagen no encontrada", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botActionPerformed
+
+    private void ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaActionPerformed
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("================== AYUDA ======================\n\n");
+        sb.append("USO DE LA PAGINA\n");
+        sb.append("- Primero elige un coche de la lista\n");
+        sb.append("- Luego dale al boton que dice 'Ver imagen' o presiona Enter\n");
+        sb.append("- La imagen del coche saldra en la ventana\n\n");
+        sb.append("BOTONES\n");
+        sb.append("- Ver imagen - Sirve para ver la imagen del coche seleccionado\n");
+        sb.append("- Salir - Salir de la aplicacion\n");
+        sb.append("- Ayuda - Muestra esta ventana de ayuda");
+
+        JOptionPane.showMessageDialog(this, sb.toString(), "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_ayudaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,9 +296,10 @@ public class ver extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ayuda;
+    private javax.swing.JButton bot;
     private javax.swing.JButton exit;
     private javax.swing.JLabel imag;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

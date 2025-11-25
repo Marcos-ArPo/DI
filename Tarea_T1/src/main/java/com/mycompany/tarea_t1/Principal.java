@@ -4,12 +4,16 @@
  */
 package com.mycompany.tarea_t1;
 
+import java.awt.event.*;
+import javax.swing.*;
+import javax.accessibility.*;
+
 /**
  *
  * @author alumnadotarde
  */
 public class Principal extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Principal.class.getName());
     public logica log = new logica();
 
@@ -18,6 +22,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        setupKeyBindings();
+        setupAccesibilidad();
     }
 
     /**
@@ -35,20 +41,21 @@ public class Principal extends javax.swing.JFrame {
         titulo = new javax.swing.JLabel();
         see = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+        ayuda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 0, 0));
 
         jPanel1.setBackground(new java.awt.Color(255, 115, 120));
 
-        add.setText("Añadir Coche");
+        add.setText("Añadir Coche (Ctrl+A)");
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addActionPerformed(evt);
             }
         });
 
-        delete.setText("Eliminar Coche");
+        delete.setText("Eliminar Coche (Ctrl+E)");
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteActionPerformed(evt);
@@ -59,17 +66,24 @@ public class Principal extends javax.swing.JFrame {
         titulo.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         titulo.setText("Programa de Sistema de Coches");
 
-        see.setText("Ver Coches");
+        see.setText("Ver Coches (Ctrl+V)");
         see.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 seeActionPerformed(evt);
             }
         });
 
-        exit.setText("Salir");
+        exit.setText("Salir (Esc)");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
+            }
+        });
+
+        ayuda.setText("Ayuda (Ctrl+H)");
+        ayuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ayudaActionPerformed(evt);
             }
         });
 
@@ -79,55 +93,136 @@ public class Principal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(ayuda))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(titulo))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(add)
-                        .addGap(62, 62, 62)
-                        .addComponent(see)
-                        .addGap(63, 63, 63)
-                        .addComponent(delete))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(280, 280, 280)
-                        .addComponent(exit)))
-                .addContainerGap(105, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(280, 280, 280)
+                                .addComponent(exit))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(add)
+                                .addGap(62, 62, 62)
+                                .addComponent(see)
+                                .addGap(63, 63, 63)
+                                .addComponent(delete))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(218, 218, 218)
+                                .addComponent(titulo)))
+                        .addGap(0, 10, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addGap(81, 81, 81)
                 .addComponent(titulo)
-                .addGap(82, 82, 82)
+                .addGap(73, 73, 73)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(add)
                     .addComponent(see)
                     .addComponent(delete))
-                .addGap(106, 106, 106)
+                .addGap(114, 114, 114)
                 .addComponent(exit)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(ayuda)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void setupKeyBindings() {
+        // Obtener el InputMap y ActionMap del JPanel
+        InputMap inputMap = jPanel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        ActionMap actionMap = jPanel1.getActionMap();
+
+        // Atajo: Ctrl+A para Añadir
+        KeyStroke ctrlA = KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_DOWN_MASK);
+        inputMap.put(ctrlA, "añadirCoche");
+        actionMap.put("añadirCoche", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                add.doClick(); // Simula click en el botón Añadir
+            }
+        });
+
+        // Atajo: Ctrl+E para Eliminar
+        KeyStroke ctrlE = KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.CTRL_DOWN_MASK);
+        inputMap.put(ctrlE, "eliminarCoche");
+        actionMap.put("eliminarCoche", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                delete.doClick(); // Simula click en el botón Eliminar
+            }
+        });
+
+        // Atajo: Ctrl+V para Ver
+        KeyStroke ctrlV = KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.CTRL_DOWN_MASK);
+        inputMap.put(ctrlV, "verCoches");
+        actionMap.put("verCoches", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                see.doClick(); // Simula click en el botón Ver
+            }
+        });
+
+        // Atajo: ESC para Salir
+        KeyStroke esc = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0);
+        inputMap.put(esc, "salir");
+        actionMap.put("salir", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                exit.doClick(); // Simula click en el botón Salir
+            }
+        });
+
+        // Atajo: Ctrl+H para Ayuda
+        KeyStroke ctrlH = KeyStroke.getKeyStroke(KeyEvent.VK_H, InputEvent.CTRL_DOWN_MASK);
+        inputMap.put(ctrlH, "ayudaAlternativa");
+        actionMap.put("ayudaAlternativa", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ayuda.doClick();
+            }
+        });
+    }
+
+    private void setupAccesibilidad() {
+        // Configurar descripciones accesibles para los botones principales
+        titulo.getAccessibleContext().setAccessibleDescription("Título de la aplicación - Sistema de Gestión de Coches");
+
+        add.getAccessibleContext().setAccessibleName("Añadir coche");
+        add.getAccessibleContext().setAccessibleDescription("Abrir ventana para añadir un nuevo coche al sistema");
+
+        delete.getAccessibleContext().setAccessibleName("Eliminar coche");
+        delete.getAccessibleContext().setAccessibleDescription("Abrir ventana para eliminar un coche existente del sistema");
+
+        see.getAccessibleContext().setAccessibleName("Ver coches");
+        see.getAccessibleContext().setAccessibleDescription("Abrir ventana para visualizar la lista de coches y sus imágenes");
+
+        ayuda.getAccessibleContext().setAccessibleName("Ayuda");
+        ayuda.getAccessibleContext().setAccessibleDescription("Mostrar ayuda e información sobre el uso de la aplicación");
+
+        exit.getAccessibleContext().setAccessibleName("Salir");
+        exit.getAccessibleContext().setAccessibleDescription("Cerrar la aplicación");
+
+        // Hacer que el panel principal sea focusable para atajos de teclado
+        jPanel1.getAccessibleContext().setAccessibleName("Panel principal de la aplicación");
+    }
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         anadir add = new anadir(this, true, log);
@@ -147,6 +242,19 @@ public class Principal extends javax.swing.JFrame {
         eliminar del = new eliminar(this, true, log);
         del.setVisible(true);
     }//GEN-LAST:event_deleteActionPerformed
+
+    private void ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaActionPerformed
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("=========== AYUDA ===============\n\n");
+        sb.append("- Añadir coche - Sirve para añadir un coche\n");
+        sb.append("- Ver coches - Sirve para los coches del garaje\n");
+        sb.append("- Eliminar coches - Sirve para eliminar un coche\n");
+        sb.append("- Salir - Salir de la aplicacion\n");
+        sb.append("- Ayuda - Muestra esta ventana de ayuda");
+
+        JOptionPane.showMessageDialog(this, sb.toString(), "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_ayudaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,11 +280,11 @@ public class Principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new Principal().setVisible(true));
     }
-    
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add;
+    private javax.swing.JButton ayuda;
     private javax.swing.JButton delete;
     private javax.swing.JButton exit;
     private javax.swing.JPanel jPanel1;

@@ -26,20 +26,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -56,41 +48,52 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="200" pref="200" max="-2" attributes="0"/>
-                          <Component id="titulo" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="ayuda" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
-                          <Component id="add" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="62" pref="62" max="-2" attributes="0"/>
-                          <Component id="see" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="63" pref="63" max="-2" attributes="0"/>
-                          <Component id="delete" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="280" pref="280" max="-2" attributes="0"/>
-                          <Component id="exit" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="280" pref="280" max="-2" attributes="0"/>
+                                  <Component id="exit" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                  <Component id="add" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="62" pref="62" max="-2" attributes="0"/>
+                                  <Component id="see" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="63" pref="63" max="-2" attributes="0"/>
+                                  <Component id="delete" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
+                                  <Component id="titulo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="105" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                   <Component id="titulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="82" pref="82" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="add" min="-2" max="-2" attributes="0"/>
                       <Component id="see" min="-2" max="-2" attributes="0"/>
                       <Component id="delete" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="106" pref="106" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
                   <Component id="exit" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="82" max="32767" attributes="0"/>
+                  <EmptySpace pref="64" max="32767" attributes="0"/>
+                  <Component id="ayuda" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -98,7 +101,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="add">
           <Properties>
-            <Property name="text" type="java.lang.String" value="A&#xf1;adir Coche"/>
+            <Property name="text" type="java.lang.String" value="A&#xf1;adir Coche (Ctrl+A)"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addActionPerformed"/>
@@ -106,7 +109,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="delete">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Eliminar Coche"/>
+            <Property name="text" type="java.lang.String" value="Eliminar Coche (Ctrl+E)"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteActionPerformed"/>
@@ -125,7 +128,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="see">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ver Coches"/>
+            <Property name="text" type="java.lang.String" value="Ver Coches (Ctrl+V)"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="seeActionPerformed"/>
@@ -133,10 +136,18 @@
         </Component>
         <Component class="javax.swing.JButton" name="exit">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Salir"/>
+            <Property name="text" type="java.lang.String" value="Salir (Esc)"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="ayuda">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ayuda (Ctrl+H)"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ayudaActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

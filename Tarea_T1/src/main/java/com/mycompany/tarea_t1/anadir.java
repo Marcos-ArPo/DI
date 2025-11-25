@@ -5,13 +5,15 @@
 package com.mycompany.tarea_t1;
 
 import javax.swing.JOptionPane;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
  *
  * @author alumnadotarde
  */
 public class anadir extends javax.swing.JDialog {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(anadir.class.getName());
     private logica log;
 
@@ -22,6 +24,8 @@ public class anadir extends javax.swing.JDialog {
         super(parent, modal);
         this.log = l;
         initComponents();
+        setupKeyBindings();
+        setupAccesibilidad();
     }
 
     /**
@@ -42,12 +46,13 @@ public class anadir extends javax.swing.JDialog {
         modelo = new javax.swing.JTextField();
         anio = new javax.swing.JTextField();
         bot = new javax.swing.JButton();
+        ayuda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 255, 255));
 
-        exit.setText("Salir");
+        exit.setText("Salir (Esc)");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
@@ -63,10 +68,17 @@ public class anadir extends javax.swing.JDialog {
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel3.setText("Año");
 
-        bot.setText("Añadir");
+        bot.setText("Añadir (Enter)");
         bot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botActionPerformed(evt);
+            }
+        });
+
+        ayuda.setText("Ayuda (Ctrl+H)");
+        ayuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ayudaActionPerformed(evt);
             }
         });
 
@@ -77,7 +89,9 @@ public class anadir extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(ayuda)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(exit))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -96,13 +110,13 @@ public class anadir extends javax.swing.JDialog {
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(marca)
                                         .addComponent(modelo, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)))))
-                        .addGap(0, 38, Short.MAX_VALUE)))
+                        .addGap(0, 50, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
+                .addContainerGap(95, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -119,7 +133,9 @@ public class anadir extends javax.swing.JDialog {
                 .addGap(49, 49, 49)
                 .addComponent(bot)
                 .addGap(98, 98, 98)
-                .addComponent(exit)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exit)
+                    .addComponent(ayuda))
                 .addContainerGap())
         );
 
@@ -127,21 +143,69 @@ public class anadir extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void setupKeyBindings() {
+        jPanel1.setFocusable(true);
+        jPanel1.requestFocusInWindow();
+
+        InputMap inputMap = jPanel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        ActionMap actionMap = jPanel1.getActionMap();
+
+        // Ctrl+H para ayuda en cualquier ventana
+        KeyStroke ctrlH = KeyStroke.getKeyStroke(KeyEvent.VK_H, InputEvent.CTRL_DOWN_MASK);
+        inputMap.put(ctrlH, "ayuda");
+        actionMap.put("ayuda", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ayuda.doClick();
+            }
+        });
+
+        // Enter para confirmar
+        KeyStroke enter = KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0);
+        inputMap.put(enter, "confirmar");
+        actionMap.put("confirmar", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                bot.doClick(); // o el botón correspondiente
+            }
+        });
+
+        // ESC para cancelar
+        KeyStroke esc = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0);
+        inputMap.put(esc, "cancelar");
+        actionMap.put("cancelar", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                exit.doClick();
+            }
+        });
+    }
+
+    private void setupAccesibilidad() {
+        // Asociar cada label con su campo correspondiente
+        jLabel1.setLabelFor(marca);
+        jLabel2.setLabelFor(modelo);
+        jLabel3.setLabelFor(anio);
+
+        // Opcional: añadir descripciones para lectores de pantalla
+        jLabel1.getAccessibleContext().setAccessibleDescription("Campo para ingresar la marca del coche");
+        jLabel2.getAccessibleContext().setAccessibleDescription("Campo para ingresar el modelo del coche");
+        jLabel3.getAccessibleContext().setAccessibleDescription("Campo para ingresar el año del coche");
+
+        marca.getAccessibleContext().setAccessibleName("Marca del coche");
+        modelo.getAccessibleContext().setAccessibleName("Modelo del coche");
+        anio.getAccessibleContext().setAccessibleName("Año del coche");
+    }
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         this.setVisible(false);
@@ -151,10 +215,10 @@ public class anadir extends javax.swing.JDialog {
         if (marca.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "El campo Marca no puede estar vacio", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(modelo.getText().isEmpty()) {
+        } else if (modelo.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "El campo Modelo no puede estar vacio", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(anio.getText().isEmpty()) {
+        } else if (anio.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "El campo Año no puede estar vacio", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -167,6 +231,21 @@ public class anadir extends javax.swing.JDialog {
         }
         this.setVisible(false);
     }//GEN-LAST:event_botActionPerformed
+
+    private void ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaActionPerformed
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("================== AYUDA ======================\n\n");
+        sb.append("USO DE LA PAGINA\n");
+        sb.append("- Primero rellenamos los campos necesarios, que son todos\n");
+        sb.append("- Luego le damos al boton de 'Añadir' o presiona Enter para añadir el coche\n\n");
+        sb.append("BOTONES\n");
+        sb.append("- Añadir - Sirve para añadir un coche al garaje\n");
+        sb.append("- Salir - Salir de la aplicacion\n");
+        sb.append("- Ayuda - Muestra esta ventana de ayuda");
+
+        JOptionPane.showMessageDialog(this, sb.toString(), "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_ayudaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,6 +286,7 @@ public class anadir extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField anio;
+    private javax.swing.JButton ayuda;
     private javax.swing.JButton bot;
     private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
