@@ -52,20 +52,21 @@ public class calc extends javax.swing.JFrame {
         b0 = new javax.swing.JButton();
         be = new javax.swing.JButton();
         bp = new javax.swing.JButton();
-        calc = new Calculadora.Calculadora();
         jButton1 = new javax.swing.JButton();
+        calc = new Calculadora.Calculadora();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 102, 255));
 
-        txt.setBackground(new java.awt.Color(204, 204, 204));
+        txt.setBackground(new java.awt.Color(255, 255, 255));
         txt.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
         txt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txt.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         txt.setOpaque(true);
 
+        bC.setBackground(new java.awt.Color(51, 255, 255));
         bC.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         bC.setText("C");
         bC.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -76,6 +77,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        bd.setBackground(new java.awt.Color(51, 255, 255));
         bd.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         bd.setText("/");
         bd.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -86,6 +88,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        bm.setBackground(new java.awt.Color(51, 255, 255));
         bm.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         bm.setText("X");
         bm.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -96,6 +99,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        br.setBackground(new java.awt.Color(51, 255, 255));
         br.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         br.setText("-");
         br.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -106,6 +110,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        b7.setBackground(new java.awt.Color(51, 255, 255));
         b7.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b7.setText("7");
         b7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -116,6 +121,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        b8.setBackground(new java.awt.Color(51, 255, 255));
         b8.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b8.setText("8");
         b8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -126,6 +132,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        b9.setBackground(new java.awt.Color(51, 255, 255));
         b9.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b9.setText("9");
         b9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -136,6 +143,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        bs.setBackground(new java.awt.Color(51, 255, 255));
         bs.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         bs.setText("+");
         bs.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -146,6 +154,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        b4.setBackground(new java.awt.Color(51, 255, 255));
         b4.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b4.setText("4");
         b4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -156,6 +165,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        b5.setBackground(new java.awt.Color(51, 255, 255));
         b5.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b5.setText("5");
         b5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -166,6 +176,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        b6.setBackground(new java.awt.Color(51, 255, 255));
         b6.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b6.setText("6");
         b6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -176,6 +187,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        b1.setBackground(new java.awt.Color(51, 255, 255));
         b1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b1.setText("1");
         b1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -186,6 +198,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        b2.setBackground(new java.awt.Color(51, 255, 255));
         b2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b2.setText("2");
         b2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -196,6 +209,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        b3.setBackground(new java.awt.Color(51, 255, 255));
         b3.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b3.setText("3");
         b3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -206,6 +220,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        b0.setBackground(new java.awt.Color(51, 255, 255));
         b0.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         b0.setText("0");
         b0.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -216,6 +231,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        be.setBackground(new java.awt.Color(51, 255, 255));
         be.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         be.setText("=");
         be.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -226,17 +242,13 @@ public class calc extends javax.swing.JFrame {
             }
         });
 
+        bp.setBackground(new java.awt.Color(51, 255, 255));
         bp.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         bp.setText(".");
         bp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        calc.setBackground(new java.awt.Color(0, 0, 0));
-        calc.setForeground(new java.awt.Color(255, 255, 255));
-        calc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        calc.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
-        calc.setOpaque(true);
-
+        jButton1.setBackground(new java.awt.Color(51, 255, 255));
         jButton1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jButton1.setText("On / Off");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -246,6 +258,8 @@ public class calc extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        calc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -297,8 +311,8 @@ public class calc extends javax.swing.JFrame {
                         .addGap(0, 11, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(calc, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(31, 31, 31)
+                        .addComponent(calc, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -306,9 +320,9 @@ public class calc extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(calc, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jButton1)
+                    .addComponent(calc, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,11 +362,11 @@ public class calc extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
